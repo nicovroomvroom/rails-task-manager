@@ -1,15 +1,20 @@
 <div class="container m-3">
-<h1>Create a new task</h1>
-  <div class="form-group">
+<h1 class="mb-3">Create a new task</h1>
     <%= form_with model: @task do |f| %>
+  <div class="form-group mb-2">
       <%= f.label :title %>
-      <%= f.text_field :title %>
-      <%= f.label :details %>
-      <%= f.text_field :details %>
-      <%= f.label :completed %>
-      <%= f.check_box(:completed, {}, "True", "False") %>
-      <%= f.submit %>
-    <% end %>
+      <%= f.text_field :title, class: "form-control" %>
   </div>
-  <%= link_to "Back to index", tasks_path %>
+  <div class="form-group mb-2">
+      <%= f.label :details %>
+      <%= f.text_field :details, class: "form-control"  %>
+  </div>
+  <div class="form-group mb-2">
+      <%= f.label :completed, class: "form-check-label" %>
+      <%= f.check_box(:completed, {}, "True", "False") %>
+  </div>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+    <br>
+  <%= link_to "Back to index", tasks_path, class: "mt-3" %>
 </div>
