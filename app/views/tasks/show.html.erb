@@ -1,0 +1,11 @@
+<div class="container m-3">
+  <h2><%= @task.title %></h2>
+  <p>Details : <%= @task.details %></p>
+  <p>Done : <%= @task.completed %></p>
+  <%= link_to "Delete",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Delete #{@task.title}?"},
+    class: "btn btn-danger mr-2"
+  %>
+  <%= link_to "Back to index", tasks_path, class: "btn btn-primary" %>
+</div>

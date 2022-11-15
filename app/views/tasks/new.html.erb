@@ -1,0 +1,15 @@
+<div class="container m-3">
+<h1>Create a new task</h1>
+  <div class="form-group">
+    <%= form_with model: @task do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :details %>
+      <%= f.text_field :details %>
+      <%= f.label :completed %>
+      <%= f.check_box(:completed, {}, "True", "False") %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <%= link_to "Back to index", tasks_path %>
+</div>

@@ -1,0 +1,8 @@
+<div class="container m-3">
+  <h1>My tasks</h1>
+  <ul class="list-group">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item list-group-item-action"><%= link_to task[:title], task_path(task[:id]), class: "card-link" %></li>
+    <% end %>
+  </ul>
+</div>
